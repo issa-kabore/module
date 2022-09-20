@@ -11,17 +11,6 @@ def one_hot_encoder(df, column_list):
     return df
 
 
-def reduce_uniques(df, column_threshold_dict):
-    """Takes in a dataframe and a dictionary consisting
-    of column name : value count threshold returns the original
-    dataframe"""
-    for key, value in column_threshold_dict.items():
-            counts = df[key].value_counts()
-            others = set(counts[counts < value].index)
-            df[key] = df[key].replace(list(others), 'Others')
-            return df
-
-
 def scale_data(df, column_list, scaler=MinMaxScaler()):
     """Takes in a dataframe and a list of column names to transform
      returns a dataframe of scaled values"""
