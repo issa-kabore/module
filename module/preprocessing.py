@@ -2,13 +2,12 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 
-def one_hot_encoder(df, column_list):
+def one_hot_encoder(df: pd.DataFrame, column_list: list):
     """Takes in a dataframe and a list of columns
     for pre-processing via one hot encoding returns
     a dataframe of one hot encoded values"""
-    df_to_encode = df[column_list]
-    df = pd.get_dummies(df_to_encode)
-    return df
+    df_encoded = pd.get_dummies(df, columns=column_list)
+    return df_encoded
 
 
 def scale_data(df, column_list, scaler=MinMaxScaler()):
