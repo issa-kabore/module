@@ -1,0 +1,6 @@
+pandas-profiling
+plotly
+configparser
+pytest
+SQLAlchemy
+SQLAlchemy-Utils
